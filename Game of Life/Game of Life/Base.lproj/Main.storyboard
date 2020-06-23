@@ -5,24 +5,18 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Conway's Game of Life-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="GameViewController" customModule="Game_of_Life" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="GameViewController" customModule="Game_of_Life" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="low-zP-9Nu">
-                                <rect key="frame" x="16" y="204" width="343" height="250"/>
-                                <color key="backgroundColor" name="GLBlue"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="250" id="Cmd-53-JHZ"/>
-                                </constraints>
-                            </view>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WFs-fH-kz4">
                                 <rect key="frame" x="0.0" y="729" width="375" height="49"/>
                                 <items>
@@ -45,14 +39,38 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="F1T-iG-Nks">
+                                <rect key="frame" x="50" y="148" width="275" height="275"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="275" id="m30-gP-JCO"/>
+                                    <constraint firstAttribute="width" secondItem="F1T-iG-Nks" secondAttribute="height" multiplier="1:1" id="mzK-vZ-pQZ"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="1" id="cHb-J2-app">
+                                    <size key="itemSize" width="10" height="10"/>
+                                    <size key="estimatedItemSize" width="10" height="10"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GridCell" id="1Ch-DZ-jul">
+                                        <rect key="frame" x="0.0" y="0.0" width="10" height="10"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="z9H-d8-nGK">
+                                            <rect key="frame" x="0.0" y="0.0" width="10" height="10"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="low-zP-9Nu" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="64" id="3XW-t8-Wy3"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="low-zP-9Nu" secondAttribute="trailing" constant="16" id="JQ3-ca-D2L"/>
+                            <constraint firstItem="F1T-iG-Nks" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jal-hm-j9I"/>
                             <constraint firstItem="WFs-fH-kz4" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="YOH-lG-HuO"/>
                             <constraint firstItem="WFs-fH-kz4" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Zwf-X2-Jt3"/>
-                            <constraint firstItem="low-zP-9Nu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="x4y-RU-F2C"/>
+                            <constraint firstItem="F1T-iG-Nks" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="k23-zd-yVw"/>
                             <constraint firstItem="WFs-fH-kz4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zfX-e8-Akz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -66,12 +84,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="gameView" destination="8bC-Xf-vdC" id="Uge-5i-Hla"/>
+                        <outlet property="gameView" destination="F1T-iG-Nks" id="jez-a1-ovg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1047.8260869565217" y="138.61607142857142"/>
+            <point key="canvasLocation" x="1047.2" y="138.17733990147784"/>
         </scene>
         <!--About-->
         <scene sceneID="BtO-Uo-rFz">
@@ -151,7 +169,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ly3-4A-luU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1939" y="139"/>
+            <point key="canvasLocation" x="1962" y="138"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="f8w-jf-dUV">
@@ -185,10 +203,10 @@
         <image name="playpause.fill" catalog="system" width="128" height="73"/>
         <image name="stop.fill" catalog="system" width="128" height="113"/>
         <namedColor name="GLBlue">
-            <color red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.32549019607843138" blue="0.5725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="GLGreen">
-            <color red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.56000000238418579" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
