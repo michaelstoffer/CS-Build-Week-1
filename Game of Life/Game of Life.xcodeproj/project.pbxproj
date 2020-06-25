@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		4C2A3A4B249C629B00A439AA /* GameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2A3A4A249C629B00A439AA /* GameCell.swift */; };
 		4C2A3A4D249C635B00A439AA /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2A3A4C249C635B00A439AA /* GameState.swift */; };
-		4C2A3A5E249C72E500A439AA /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2A3A5D249C72E500A439AA /* GameView.swift */; };
+		4C44CDF024A442250070559E /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C44CDEE24A442250070559E /* About.storyboard */; };
 		4CA0A2E3249853EC00CD8199 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA0A2E2249853EC00CD8199 /* AppDelegate.swift */; };
 		4CA0A2E5249853EC00CD8199 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA0A2E4249853EC00CD8199 /* SceneDelegate.swift */; };
 		4CA0A2E7249853EC00CD8199 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA0A2E6249853EC00CD8199 /* GameViewController.swift */; };
@@ -22,7 +22,7 @@
 /* Begin PBXFileReference section */
 		4C2A3A4A249C629B00A439AA /* GameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCell.swift; sourceTree = "<group>"; };
 		4C2A3A4C249C635B00A439AA /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
-		4C2A3A5D249C72E500A439AA /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		4C44CDEF24A442250070559E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Game of Life/Base.lproj/About.storyboard"; sourceTree = "<group>"; };
 		4CA0A2DF249853EC00CD8199 /* Game of Life.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Game of Life.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CA0A2E2249853EC00CD8199 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CA0A2E4249853EC00CD8199 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,14 +54,6 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
-		4C2A3A5C249C725300A439AA /* View */ = {
-			isa = PBXGroup;
-			children = (
-				4C2A3A5D249C72E500A439AA /* GameView.swift */,
-			);
-			name = View;
-			sourceTree = "<group>";
-		};
 		4CA0A2D6249853EC00CD8199 = {
 			isa = PBXGroup;
 			children = (
@@ -82,7 +74,6 @@
 			isa = PBXGroup;
 			children = (
 				4C2A3A49249C627B00A439AA /* Models */,
-				4C2A3A5C249C725300A439AA /* View */,
 				4CA0A2F82498672000CD8199 /* View Controllers */,
 				4CA0A2F72498545300CD8199 /* Storyboards */,
 				4CA0A2F62498540400CD8199 /* Resources */,
@@ -104,8 +95,9 @@
 		4CA0A2F72498545300CD8199 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				4CA0A2E8249853EC00CD8199 /* Main.storyboard */,
 				4CA0A2ED249853ED00CD8199 /* LaunchScreen.storyboard */,
+				4CA0A2E8249853EC00CD8199 /* Main.storyboard */,
+				4C44CDEE24A442250070559E /* About.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -179,6 +171,7 @@
 			files = (
 				4CA0A2EF249853ED00CD8199 /* LaunchScreen.storyboard in Resources */,
 				4CA0A2EC249853ED00CD8199 /* Assets.xcassets in Resources */,
+				4C44CDF024A442250070559E /* About.storyboard in Resources */,
 				4CA0A2EA249853EC00CD8199 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -196,13 +189,20 @@
 				4C2A3A4D249C635B00A439AA /* GameState.swift in Sources */,
 				4CA0A2FA249867E000CD8199 /* AboutViewController.swift in Sources */,
 				4CA0A2E5249853EC00CD8199 /* SceneDelegate.swift in Sources */,
-				4C2A3A5E249C72E500A439AA /* GameView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		4C44CDEE24A442250070559E /* About.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C44CDEF24A442250070559E /* Base */,
+			);
+			name = About.storyboard;
+			sourceTree = "<group>";
+		};
 		4CA0A2E8249853EC00CD8199 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

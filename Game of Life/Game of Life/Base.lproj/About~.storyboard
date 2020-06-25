@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QGW-XQ-cBe">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Conway's Game of Life-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="GameViewController" customModule="Game_of_Life" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WFs-fH-kz4">
+                                <rect key="frame" x="0.0" y="729" width="375" height="49"/>
+                                <items>
+                                    <barButtonItem image="playpause.fill" catalog="system" id="FLT-iG-Wd9">
+                                        <connections>
+                                            <action selector="playPauseToggle:" destination="BYZ-38-t0r" id="8P0-Gd-HBV"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="kcf-LT-MkR"/>
+                                    <barButtonItem image="forward.fill" catalog="system" id="XH7-ID-IPD">
+                                        <connections>
+                                            <action selector="advanceOneStep:" destination="BYZ-38-t0r" id="pN2-9Q-u52"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="DUS-Au-Jqo"/>
+                                    <barButtonItem title="Reset" id="9Uk-jo-ZaW">
+                                        <connections>
+                                            <action selector="stopButton:" destination="BYZ-38-t0r" id="NEz-m8-iqb"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="vgW-Ng-VMB"/>
+                                    <barButtonItem title="Clear" id="ZbX-Fh-Hq8">
+                                        <connections>
+                                            <action selector="clearButton:" destination="BYZ-38-t0r" id="g9Q-Xw-Sp8"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="F1T-iG-Nks">
+                                <rect key="frame" x="50" y="179.33333333333337" width="275" height="275"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="275" id="m30-gP-JCO"/>
+                                    <constraint firstAttribute="width" secondItem="F1T-iG-Nks" secondAttribute="height" multiplier="1:1" id="mzK-vZ-pQZ"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="1" id="cHb-J2-app">
+                                    <size key="itemSize" width="10" height="10"/>
+                                    <size key="estimatedItemSize" width="10" height="10"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GridCell" id="1Ch-DZ-jul">
+                                        <rect key="frame" x="0.0" y="0.0" width="10" height="10"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="z9H-d8-nGK">
+                                            <rect key="frame" x="0.0" y="0.0" width="10" height="10"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="10" height="10"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="iY5-3Y-zOo">
+                                <rect key="frame" x="50" y="148" width="174" height="23.333333333333343"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Generation:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OAd-tU-WV7">
+                                        <rect key="frame" x="0.0" y="0.0" width="112.33333333333333" height="23.333333333333332"/>
+                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
+                                        <color key="textColor" name="GLGreen"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3D-T5-8fL">
+                                        <rect key="frame" x="120.33333333333336" y="0.0" width="53.666666666666671" height="23.333333333333332"/>
+                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="20"/>
+                                        <color key="textColor" name="GLGreen"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="iY5-3Y-zOo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="8zC-bk-42T"/>
+                            <constraint firstItem="F1T-iG-Nks" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jal-hm-j9I"/>
+                            <constraint firstItem="WFs-fH-kz4" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="YOH-lG-HuO"/>
+                            <constraint firstItem="WFs-fH-kz4" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Zwf-X2-Jt3"/>
+                            <constraint firstItem="iY5-3Y-zOo" firstAttribute="leading" secondItem="F1T-iG-Nks" secondAttribute="leading" id="cwa-P1-uhg"/>
+                            <constraint firstItem="F1T-iG-Nks" firstAttribute="top" secondItem="iY5-3Y-zOo" secondAttribute="bottom" constant="8" id="ij4-f8-A9V"/>
+                            <constraint firstItem="WFs-fH-kz4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="zfX-e8-Akz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Conway's Game of Life" id="4Qz-2K-BKa">
+                        <barButtonItem key="backBarButtonItem" title="Game of Life" id="ek9-ef-YMs"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="info.circle" catalog="system" id="vP3-8S-InA">
+                            <connections>
+                                <segue destination="nwg-Gj-QGV" kind="show" id="IWt-3c-LSm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="gameView" destination="F1T-iG-Nks" id="jez-a1-ovg"/>
+                        <outlet property="generationLabel" destination="a3D-T5-8fL" id="TdW-zW-BkR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.2" y="138.17733990147784"/>
+        </scene>
+        <!--About-->
+        <scene sceneID="BtO-Uo-rFz">
+            <objects>
+                <viewController id="nwg-Gj-QGV" customClass="AboutViewController" customModule="Game_of_Life" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rIh-SZ-BJ5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rules" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G0U-hn-Ztm">
+                                <rect key="frame" x="16" y="148" width="343" height="29.333333333333343"/>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="26"/>
+                                <color key="textColor" name="GLBlue"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KjY-Wb-XAI">
+                                <rect key="frame" x="16" y="185.33333333333334" width="343" height="109.66666666666666"/>
+                                <string key="text">The universe of the Game of Life is an infinite, two-dimensional orthogonal grid of square cells, each of which is in one of two possible states, live or dead, (or populated and unpopulated, respectively). Every cell interacts with its eight neighbours, which are the cells that are horizontally, vertically, or diagonally adjacent. At each step in time, the following transitions occur:</string>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5la-1n-PSL">
+                                <rect key="frame" x="32" y="303" width="327" height="165"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. Any live cell with fewer than two live neighbours dies, as if by underpopulation." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Axq-9G-NDd">
+                                        <rect key="frame" x="0.0" y="0.0" width="327" height="31.333333333333332"/>
+                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2. Any live cell with two or three live neighbours lives on to the next generation." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ph-H7-Cja">
+                                        <rect key="frame" x="0.0" y="39.333333333333314" width="327" height="31.333333333333329"/>
+                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3. Any live cell with more than three live neighbours dies, as if by overpopulation." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kLr-Tt-WCZ">
+                                        <rect key="frame" x="0.0" y="78.666666666666686" width="327" height="31.333333333333329"/>
+                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4. Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mbi-dr-rd9">
+                                        <rect key="frame" x="0.0" y="118" width="327" height="47"/>
+                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About this Algorithm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2q1-LI-4u6">
+                                <rect key="frame" x="16" y="499.99999999999994" width="343" height="29.333333333333314"/>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="26"/>
+                                <color key="textColor" name="GLBlue"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="G0U-hn-Ztm" firstAttribute="top" secondItem="Pky-Wn-hlZ" secondAttribute="top" constant="8" id="4aq-3A-W4x"/>
+                            <constraint firstItem="2q1-LI-4u6" firstAttribute="leading" secondItem="Pky-Wn-hlZ" secondAttribute="leading" constant="16" id="4zX-pQ-Xqw"/>
+                            <constraint firstItem="5la-1n-PSL" firstAttribute="leading" secondItem="Pky-Wn-hlZ" secondAttribute="leading" constant="32" id="56q-V9-w7R"/>
+                            <constraint firstItem="KjY-Wb-XAI" firstAttribute="top" secondItem="G0U-hn-Ztm" secondAttribute="bottom" constant="8" id="A1W-gK-s7z"/>
+                            <constraint firstItem="2q1-LI-4u6" firstAttribute="top" secondItem="5la-1n-PSL" secondAttribute="bottom" constant="32" id="BjJ-BO-Jze"/>
+                            <constraint firstItem="Pky-Wn-hlZ" firstAttribute="trailing" secondItem="G0U-hn-Ztm" secondAttribute="trailing" constant="16" id="DdM-RU-NlQ"/>
+                            <constraint firstItem="Pky-Wn-hlZ" firstAttribute="trailing" secondItem="2q1-LI-4u6" secondAttribute="trailing" constant="16" id="GjO-WW-dz8"/>
+                            <constraint firstItem="5la-1n-PSL" firstAttribute="top" secondItem="KjY-Wb-XAI" secondAttribute="bottom" constant="8" id="JvY-YZ-J6F"/>
+                            <constraint firstItem="G0U-hn-Ztm" firstAttribute="leading" secondItem="Pky-Wn-hlZ" secondAttribute="leading" constant="16" id="VGy-Yy-nYC"/>
+                            <constraint firstAttribute="trailing" secondItem="5la-1n-PSL" secondAttribute="trailing" constant="16" id="XuM-Ee-COv"/>
+                            <constraint firstItem="KjY-Wb-XAI" firstAttribute="leading" secondItem="Pky-Wn-hlZ" secondAttribute="leading" constant="16" id="e7L-mi-W7l"/>
+                            <constraint firstAttribute="trailing" secondItem="KjY-Wb-XAI" secondAttribute="trailing" constant="16" id="rHb-df-Nya"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Pky-Wn-hlZ"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="About" id="GKF-yP-r4C"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ly3-4A-luU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1962" y="138"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="f8w-jf-dUV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QGW-XQ-cBe" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="dg0-OU-rgG">
+                        <rect key="frame" x="0.0" y="44" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="26"/>
+                            <color key="textColor" name="GLGreen"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Ccd-Sl-Ahn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xil-he-UqC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="138.61607142857142"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" name="GLBlue"/>
+    <resources>
+        <image name="forward.fill" catalog="system" width="128" height="79"/>
+        <image name="info.circle" catalog="system" width="128" height="121"/>
+        <image name="playpause.fill" catalog="system" width="128" height="73"/>
+        <namedColor name="GLBlue">
+            <color red="0.0" green="0.32549019607843138" blue="0.5725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="GLGreen">
+            <color red="0.0" green="0.56000000238418579" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -1,26 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BcB-jR-3Hx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="beV-vU-7wB">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Conway's Game of Life-->
         <scene sceneID="r5T-S6-Hs9">
             <objects>
                 <viewController id="BcB-jR-3Hx" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YRB-S7-zux">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Game of Life" translatesAutoresizingMaskIntoConstraints="NO" id="eoO-ux-Xo5">
+                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ivn-bX-bsV" firstAttribute="bottom" secondItem="eoO-ux-Xo5" secondAttribute="bottom" id="HmN-nY-cvF"/>
+                            <constraint firstItem="eoO-ux-Xo5" firstAttribute="top" secondItem="ivn-bX-bsV" secondAttribute="top" id="kNt-kM-JBM"/>
+                            <constraint firstItem="eoO-ux-Xo5" firstAttribute="leading" secondItem="ivn-bX-bsV" secondAttribute="leading" id="nvB-hy-oT3"/>
+                            <constraint firstItem="ivn-bX-bsV" firstAttribute="trailing" secondItem="eoO-ux-Xo5" secondAttribute="trailing" id="xLo-Gb-WGQ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ivn-bX-bsV"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Conway's Game of Life" id="Dfy-d8-fRc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="97g-IT-tEc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1864" y="375"/>
+            <point key="canvasLocation" x="2773.913043478261" y="375"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Xo9-Rn-QYQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="beV-vU-7wB" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="QlN-Qf-zVN">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="26"/>
+                            <color key="textColor" name="GLGreen"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BcB-jR-3Hx" kind="relationship" relationship="rootViewController" id="m4h-o5-210"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5pA-zA-q4V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1863.7681159420292" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Game of Life" width="1024" height="1024"/>
+        <namedColor name="GLGreen">
+            <color red="0.0" green="0.56000000238418579" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
