@@ -108,8 +108,8 @@ extension GameViewController: UICollectionViewDataSource {
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GridCell", for: indexPath)
 
 		let singleCell = self.world.cells[indexPath.row]
-		cell.layer.backgroundColor = singleCell.state == State.alive ? UIColor(named: "GLGreen")!.cgColor : UIColor(named: "GLRed")!.cgColor
-		cell.layer.cornerRadius = singleCell.state == State.alive ? cell.bounds.height/2 : cell.bounds.height/4
+		cell.layer.backgroundColor = singleCell.state == State.alive ? UIColor(named: "GLBlue")!.cgColor : UIColor(named: "GLGrey")!.cgColor
+		cell.layer.cornerRadius = singleCell.state == State.alive ? cell.bounds.height/4 : cell.bounds.height/4
 				
 		return cell
 	}

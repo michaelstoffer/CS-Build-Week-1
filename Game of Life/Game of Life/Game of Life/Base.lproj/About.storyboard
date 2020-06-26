@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nwg-Gj-QGV">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -13,72 +13,22 @@
             <objects>
                 <viewController id="nwg-Gj-QGV" customClass="AboutViewController" customModule="Game_of_Life" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rIh-SZ-BJ5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rules" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G0U-hn-Ztm">
-                                <rect key="frame" x="16" y="52" width="382" height="29.5"/>
-                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="26"/>
-                                <color key="textColor" name="GLBlue"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KjY-Wb-XAI">
-                                <rect key="frame" x="16" y="89.5" width="382" height="109.5"/>
-                                <string key="text">The universe of the Game of Life is an infinite, two-dimensional orthogonal grid of square cells, each of which is in one of two possible states, live or dead, (or populated and unpopulated, respectively). Every cell interacts with its eight neighbours, which are the cells that are horizontally, vertically, or diagonally adjacent. At each step in time, the following transitions occur:</string>
-                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5la-1n-PSL">
-                                <rect key="frame" x="32" y="207" width="366" height="150"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. Any live cell with fewer than two live neighbours dies, as if by underpopulation." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Axq-9G-NDd">
-                                        <rect key="frame" x="0.0" y="0.0" width="366" height="31.5"/>
-                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="14"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2. Any live cell with two or three live neighbours lives on to the next generation." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ph-H7-Cja">
-                                        <rect key="frame" x="0.0" y="39.5" width="366" height="31.5"/>
-                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="14"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3. Any live cell with more than three live neighbours dies, as if by overpopulation." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kLr-Tt-WCZ">
-                                        <rect key="frame" x="0.0" y="79" width="366" height="31.5"/>
-                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="14"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4. Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mbi-dr-rd9">
-                                        <rect key="frame" x="0.0" y="118.5" width="366" height="31.5"/>
-                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="14"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About this Algorithm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2q1-LI-4u6">
-                                <rect key="frame" x="16" y="389" width="382" height="29.5"/>
-                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="26"/>
-                                <color key="textColor" name="GLBlue"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CdY-oS-FgA">
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <connections>
+                                    <segue destination="z6a-BV-41o" kind="embed" id="VDH-Ix-KFU"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="G0U-hn-Ztm" firstAttribute="top" secondItem="Pky-Wn-hlZ" secondAttribute="top" constant="8" id="4aq-3A-W4x"/>
-                            <constraint firstItem="2q1-LI-4u6" firstAttribute="leading" secondItem="Pky-Wn-hlZ" secondAttribute="leading" constant="16" id="4zX-pQ-Xqw"/>
-                            <constraint firstItem="5la-1n-PSL" firstAttribute="leading" secondItem="Pky-Wn-hlZ" secondAttribute="leading" constant="32" id="56q-V9-w7R"/>
-                            <constraint firstItem="KjY-Wb-XAI" firstAttribute="top" secondItem="G0U-hn-Ztm" secondAttribute="bottom" constant="8" id="A1W-gK-s7z"/>
-                            <constraint firstItem="2q1-LI-4u6" firstAttribute="top" secondItem="5la-1n-PSL" secondAttribute="bottom" constant="32" id="BjJ-BO-Jze"/>
-                            <constraint firstItem="Pky-Wn-hlZ" firstAttribute="trailing" secondItem="G0U-hn-Ztm" secondAttribute="trailing" constant="16" id="DdM-RU-NlQ"/>
-                            <constraint firstItem="Pky-Wn-hlZ" firstAttribute="trailing" secondItem="2q1-LI-4u6" secondAttribute="trailing" constant="16" id="GjO-WW-dz8"/>
-                            <constraint firstItem="5la-1n-PSL" firstAttribute="top" secondItem="KjY-Wb-XAI" secondAttribute="bottom" constant="8" id="JvY-YZ-J6F"/>
-                            <constraint firstItem="G0U-hn-Ztm" firstAttribute="leading" secondItem="Pky-Wn-hlZ" secondAttribute="leading" constant="16" id="VGy-Yy-nYC"/>
-                            <constraint firstAttribute="trailing" secondItem="5la-1n-PSL" secondAttribute="trailing" constant="16" id="XuM-Ee-COv"/>
-                            <constraint firstItem="KjY-Wb-XAI" firstAttribute="leading" secondItem="Pky-Wn-hlZ" secondAttribute="leading" constant="16" id="e7L-mi-W7l"/>
-                            <constraint firstAttribute="trailing" secondItem="KjY-Wb-XAI" secondAttribute="trailing" constant="16" id="rHb-df-Nya"/>
+                            <constraint firstAttribute="trailing" secondItem="CdY-oS-FgA" secondAttribute="trailing" id="UAK-k5-unT"/>
+                            <constraint firstItem="CdY-oS-FgA" firstAttribute="leading" secondItem="rIh-SZ-BJ5" secondAttribute="leading" id="jsA-Fs-GJU"/>
+                            <constraint firstItem="CdY-oS-FgA" firstAttribute="top" secondItem="Pky-Wn-hlZ" secondAttribute="top" id="ldd-Jl-Q2V"/>
+                            <constraint firstItem="Pky-Wn-hlZ" firstAttribute="bottom" secondItem="CdY-oS-FgA" secondAttribute="bottom" id="mbb-hc-qDu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Pky-Wn-hlZ"/>
                     </view>
@@ -86,7 +36,101 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ly3-4A-luU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1962" y="138"/>
+            <point key="canvasLocation" x="1960.8695652173915" y="137.94642857142856"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="TtX-7a-AOR">
+            <objects>
+                <viewController id="z6a-BV-41o" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Abt-OP-2wJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="734"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rules" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G0U-hn-Ztm">
+                                <rect key="frame" x="16" y="52.000000000000007" width="343" height="29.333333333333336"/>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="26"/>
+                                <color key="textColor" name="GLBlue"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KjY-Wb-XAI">
+                                <rect key="frame" x="16" y="89.333333333333314" width="343" height="109.66666666666669"/>
+                                <string key="text">The universe of the Game of Life is an infinite, two-dimensional orthogonal grid of square cells, each of which is in one of two possible states, live or dead, (or populated and unpopulated, respectively). Every cell interacts with its eight neighbours, which are the cells that are horizontally, vertically, or diagonally adjacent. At each step in time, the following transitions occur:</string>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5la-1n-PSL">
+                                <rect key="frame" x="32" y="207" width="327" height="165"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. Any live cell with fewer than two live neighbours dies, as if by underpopulation." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Axq-9G-NDd">
+                                        <rect key="frame" x="0.0" y="0.0" width="327" height="31.333333333333332"/>
+                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2. Any live cell with two or three live neighbours lives on to the next generation." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ph-H7-Cja">
+                                        <rect key="frame" x="0.0" y="39.333333333333343" width="327" height="31.333333333333329"/>
+                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3. Any live cell with more than three live neighbours dies, as if by overpopulation." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kLr-Tt-WCZ">
+                                        <rect key="frame" x="0.0" y="78.666666666666686" width="327" height="31.333333333333329"/>
+                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4. Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mbi-dr-rd9">
+                                        <rect key="frame" x="0.0" y="118" width="327" height="47"/>
+                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About this Algorithm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2q1-LI-4u6">
+                                <rect key="frame" x="16" y="380" width="343" height="29.333333333333314"/>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="26"/>
+                                <color key="textColor" name="GLBlue"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="iY9-78-M2b">
+                                <rect key="frame" x="16" y="417.33333333333331" width="343" height="94"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x2U-yT-H5Z">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="94"/>
+                                        <string key="text"> John Conway began doing experiments in 1968 with a variety of different two-dimensional cellular automaton rules. While the definitions before the Game of Life were proof-oriented, Conway's construction aimed at simplicity without a priori providing proof the automaton was alive.</string>
+                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="G0U-hn-Ztm" firstAttribute="leading" secondItem="oIk-0W-6mn" secondAttribute="leading" constant="16" id="8a7-jX-Cql"/>
+                            <constraint firstAttribute="trailing" secondItem="2q1-LI-4u6" secondAttribute="trailing" constant="16" id="9Em-0b-GMX"/>
+                            <constraint firstItem="KjY-Wb-XAI" firstAttribute="top" secondItem="G0U-hn-Ztm" secondAttribute="bottom" constant="8" id="BRH-gx-PpJ"/>
+                            <constraint firstItem="G0U-hn-Ztm" firstAttribute="top" secondItem="oIk-0W-6mn" secondAttribute="top" constant="8" id="COf-P8-a8L"/>
+                            <constraint firstItem="G0U-hn-Ztm" firstAttribute="trailing" secondItem="Abt-OP-2wJ" secondAttribute="trailing" constant="-16" id="Fq8-Yk-Kbp"/>
+                            <constraint firstItem="iY9-78-M2b" firstAttribute="top" secondItem="2q1-LI-4u6" secondAttribute="bottom" constant="8" id="IP8-kA-bmG"/>
+                            <constraint firstAttribute="trailing" secondItem="5la-1n-PSL" secondAttribute="trailing" constant="16" id="W6p-Yg-eNs"/>
+                            <constraint firstItem="oIk-0W-6mn" firstAttribute="trailing" secondItem="KjY-Wb-XAI" secondAttribute="trailing" constant="16" id="c34-WK-o42"/>
+                            <constraint firstItem="5la-1n-PSL" firstAttribute="leading" secondItem="oIk-0W-6mn" secondAttribute="leading" constant="32" id="iru-Ny-G0A"/>
+                            <constraint firstItem="2q1-LI-4u6" firstAttribute="top" secondItem="5la-1n-PSL" secondAttribute="bottom" constant="8" id="m4k-fb-Z0R"/>
+                            <constraint firstItem="KjY-Wb-XAI" firstAttribute="leading" secondItem="oIk-0W-6mn" secondAttribute="leading" constant="16" id="ny2-aH-r9U"/>
+                            <constraint firstItem="2q1-LI-4u6" firstAttribute="leading" secondItem="oIk-0W-6mn" secondAttribute="leading" constant="16" id="o6E-sz-GbH"/>
+                            <constraint firstItem="5la-1n-PSL" firstAttribute="top" secondItem="KjY-Wb-XAI" secondAttribute="bottom" constant="8" id="rOo-5D-3bk"/>
+                            <constraint firstItem="iY9-78-M2b" firstAttribute="leading" secondItem="oIk-0W-6mn" secondAttribute="leading" constant="16" id="tKL-cF-ocR"/>
+                            <constraint firstAttribute="trailing" secondItem="iY9-78-M2b" secondAttribute="trailing" constant="16" id="vg0-j8-I1z"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="oIk-0W-6mn"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PTu-ej-571" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2833" y="137"/>
         </scene>
     </scenes>
     <color key="tintColor" name="GLBlue"/>
